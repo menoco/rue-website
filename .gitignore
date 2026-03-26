@@ -1,0 +1,11 @@
+node_modules/
+temporary screenshots/
+www.ruebsamconsulting.de_.png
+www.ruebsamconsulting.de_forschungszulage.png
+www.ruebsamconsulting.de_forschungszulage (1).png
+www.yeldra.com_.png
+serve.mjs
+screenshot.mjs
+package.json
+package-lock.json
+CLAUDE.md

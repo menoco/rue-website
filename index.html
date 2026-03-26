@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rübsam Consulting — Staatliche Fördermittel und Zuschüsse sichern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+      background: #ffffff;
+      color: #07001f;
+      letter-spacing: 0.2px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .nav-link {
+      color: rgba(7,0,31,0.55);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .nav-link:hover { color: #07001f; }
+    .nav-link:focus-visible { outline: 2px solid #6e45ff; border-radius: 4px; }
+
+    .btn-primary {
+      background: #6e45ff;
+      color: #fff;
+      padding: 0.65rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.15s ease;
+      box-shadow: 0 4px 14px rgba(110,69,255,0.3), 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(110,69,255,0.38), 0 2px 6px rgba(0,0,0,0.1); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid #6e45ff; outline-offset: 2px; }
+
+    .btn-outline {
+      background: transparent;
+      color: #07001f;
+      padding: 0.65rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1px solid rgba(7,0,31,0.18);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease;
+    }
+    .btn-outline:hover { border-color: rgba(7,0,31,0.4); transform: translateY(-2px); }
+    .btn-outline:active { transform: translateY(0); }
+    .btn-outline:focus-visible { outline: 2px solid #6e45ff; outline-offset: 2px; }
+
+    .card-light {
+      background: #ffffff;
+      border: 1px solid rgba(7,0,31,0.08);
+      border-radius: 16px;
+      box-shadow:
+        0 2px 12px rgba(7,0,31,0.06),
+        0 1px 3px rgba(7,0,31,0.04),
+        0 0 0 1px rgba(255,255,255,0.8) inset;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+    }
+    .card-light:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(110,69,255,0.12), 0 2px 8px rgba(7,0,31,0.06), 0 0 0 1px rgba(110,69,255,0.12);
+    }
+
+    .faq-item { border-bottom: 1px solid rgba(7,0,31,0.08); }
+    .faq-answer { display: none; }
+    .faq-item.open .faq-answer { display: block; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #f5f4fb; }
+    ::-webkit-scrollbar-thumb { background: rgba(110,69,255,0.3); border-radius: 3px; }
+
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr 1fr !important; }
+      .stats-grid { grid-template-columns: 1fr !important; }
+      .testimonial-grid { grid-template-columns: 1fr !important; }
+      .strip-grid { grid-template-columns: 1fr 1fr !important; }
+      .nav-links { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(7,0,31,0.07);box-shadow:0 1px 12px rgba(7,0,31,0.05);">
+  <div style="max-width:1160px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;height:64px;gap:2rem;">
+    <a href="#" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;flex-shrink:0;">
+      <div style="width:30px;height:30px;background:linear-gradient(135deg,#6e45ff,#9b7bff);border-radius:7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(110,69,255,0.35);">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 3h5a4 4 0 0 1 0 8H4V3z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </div>
+      <span style="font-weight:800;font-size:1.05rem;color:#07001f;letter-spacing:-0.03em;">Rübsam</span>
+    </a>
+
+    <div class="nav-links" style="display:flex;align-items:center;gap:1.75rem;flex:1;justify-content:center;">
+      <a href="forschungszulage.html" class="nav-link">Forschungszulage</a>
+      <a href="#foerderung" class="nav-link">EU-Förderung</a>
+      <a href="#prozess" class="nav-link">Ablauf</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0;margin-left:auto;">
+      <a href="#kontakt" class="nav-link" style="padding:0.4rem 0.75rem;">Über uns</a>
+      <a href="#kontakt" class="btn-primary" style="padding:0.5rem 1.1rem;font-size:0.875rem;">Förderung prüfen</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:7rem 1.5rem 5rem;background:linear-gradient(160deg,#f5f3ff 0%,#ffffff 40%,#f0fdf8 100%);">
+
+  <!-- Soft background blobs -->
+  <div style="position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(ellipse,rgba(110,69,255,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:0;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(ellipse,rgba(61,253,152,0.12) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;top:40%;left:40%;width:600px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(110,69,255,0.05) 0%,transparent 65%);pointer-events:none;"></div>
+
+  <div style="position:relative;z-index:1;text-align:center;max-width:820px;margin:0 auto;width:100%;">
+
+    <!-- Badge -->
+    <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(110,69,255,0.08);border:1px solid rgba(110,69,255,0.2);border-radius:100px;padding:0.3rem 1rem 0.3rem 0.6rem;margin-bottom:1.75rem;">
+      <div style="width:20px;height:20px;background:rgba(110,69,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+        <div style="width:7px;height:7px;border-radius:50%;background:#6e45ff;"></div>
+      </div>
+      <span style="font-size:0.8rem;color:#6e45ff;font-weight:600;letter-spacing:0.02em;">Spezialist für Fördermittelakquise</span>
+    </div>
+
+    <h1 style="font-size:clamp(2.4rem,5.5vw,3.8rem);font-weight:800;line-height:1.08;letter-spacing:-0.035em;margin:0 0 1.25rem;color:#07001f;">
+      Staatliche Fördermittel<br>und Zuschüsse sichern.
+    </h1>
+
+    <p style="font-size:1.1rem;color:rgba(7,0,31,0.55);line-height:1.75;margin:0 0 2.25rem;max-width:580px;margin-left:auto;margin-right:auto;">
+      Wir begleiten Unternehmen — vom Start-up bis zum Konzern — durch den gesamten Prozess der Antragsstellung für Forschungs-, EU- und regionale Förderprogramme.
+    </p>
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:0.85rem;flex-wrap:wrap;">
+      <a href="#kontakt" class="btn-primary" style="padding:0.8rem 2rem;font-size:1rem;">Jetzt Förderung prüfen</a>
+      <a href="#leistungen" class="btn-outline" style="padding:0.8rem 2rem;font-size:1rem;">Leistungen ansehen →</a>
+    </div>
+
+    <!-- Floating dashboard cards -->
+    <div style="margin-top:4rem;position:relative;">
+      <div style="position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);width:65%;height:60px;background:rgba(110,69,255,0.18);filter:blur(30px);border-radius:50%;pointer-events:none;z-index:0;"></div>
+
+      <div style="position:relative;z-index:1;padding:1.5rem;background:#ffffff;border:1px solid rgba(7,0,31,0.08);border-radius:20px;box-shadow:0 24px 80px rgba(7,0,31,0.1),0 4px 16px rgba(110,69,255,0.08);">
+        <!-- Top row -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.85rem;margin-bottom:0.85rem;">
+          <!-- Big number -->
+          <div style="background:linear-gradient(135deg,#f5f3ff,#ede9ff);border:1px solid rgba(110,69,255,0.15);border-radius:14px;padding:1.1rem 1.25rem;">
+            <div style="font-size:0.62rem;color:rgba(7,0,31,0.45);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Gesicherte Förderung</div>
+            <div style="font-size:1.7rem;font-weight:800;color:#6e45ff;letter-spacing:-0.04em;line-height:1;">€ 2,4 Mio.</div>
+            <div style="margin-top:0.4rem;font-size:0.62rem;color:rgba(110,69,255,0.6);">↑ +18% ggü. Vorjahr</div>
+          </div>
+          <!-- Donut -->
+          <div style="background:#fafafa;border:1px solid rgba(7,0,31,0.07);border-radius:14px;padding:1.1rem 1.25rem;display:flex;align-items:center;gap:1rem;">
+            <svg viewBox="0 0 64 64" style="width:54px;height:54px;flex-shrink:0;">
+              <circle cx="32" cy="32" r="22" fill="none" stroke="rgba(7,0,31,0.07)" stroke-width="8"/>
+              <circle cx="32" cy="32" r="22" fill="none" stroke="#6e45ff" stroke-width="8"
+                stroke-dasharray="138.2" stroke-dashoffset="34"
+                stroke-linecap="round" transform="rotate(-90 32 32)"
+                style="filter:drop-shadow(0 0 4px rgba(110,69,255,0.4))"/>
+              <circle cx="32" cy="32" r="22" fill="none" stroke="#3dfd98" stroke-width="8"
+                stroke-dasharray="138.2" stroke-dashoffset="104"
+                stroke-linecap="round" transform="rotate(-90 32 32)"/>
+            </svg>
+            <div>
+              <div style="font-size:0.62rem;color:rgba(7,0,31,0.4);margin-bottom:0.25rem;">Erfolgsquote</div>
+              <div style="font-size:1.3rem;font-weight:800;color:#07001f;letter-spacing:-0.03em;">95 %</div>
+            </div>
+          </div>
+          <!-- Bar chart -->
+          <div style="background:#fafafa;border:1px solid rgba(7,0,31,0.07);border-radius:14px;padding:1.1rem 1.25rem;">
+            <div style="font-size:0.62rem;color:rgba(7,0,31,0.4);margin-bottom:0.65rem;">Anträge dieses Quartal</div>
+            <div style="display:flex;align-items:flex-end;gap:5px;height:36px;">
+              <div style="flex:1;background:#e3dbff;border-radius:3px 3px 0 0;height:45%;"></div>
+              <div style="flex:1;background:#e3dbff;border-radius:3px 3px 0 0;height:65%;"></div>
+              <div style="flex:1;background:#c6b5ff;border-radius:3px 3px 0 0;height:55%;"></div>
+              <div style="flex:1;background:#c6b5ff;border-radius:3px 3px 0 0;height:80%;"></div>
+              <div style="flex:1;background:#6e45ff;border-radius:3px 3px 0 0;height:100%;box-shadow:0 0 6px rgba(110,69,255,0.4);"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Table -->
+        <div style="background:#fafafa;border:1px solid rgba(7,0,31,0.07);border-radius:12px;overflow:hidden;">
+          <div style="padding:0.55rem 0.85rem;background:#f5f4fb;border-bottom:1px solid rgba(7,0,31,0.06);display:flex;gap:1rem;">
+            <span style="font-size:0.58rem;color:rgba(7,0,31,0.35);font-weight:700;letter-spacing:0.08em;flex:3;">PROJEKT</span>
+            <span style="font-size:0.58rem;color:rgba(7,0,31,0.35);font-weight:700;letter-spacing:0.08em;flex:1.2;">PROGRAMM</span>
+            <span style="font-size:0.58rem;color:rgba(7,0,31,0.35);font-weight:700;letter-spacing:0.08em;flex:1;">STATUS</span>
+            <span style="font-size:0.58rem;color:rgba(7,0,31,0.35);font-weight:700;letter-spacing:0.08em;flex:1;text-align:right;">BETRAG</span>
+          </div>
+          <div style="padding:0.55rem 0.85rem;border-bottom:1px solid rgba(7,0,31,0.05);display:flex;gap:1rem;align-items:center;">
+            <span style="font-size:0.65rem;color:#07001f;font-weight:600;flex:3;">F&amp;E Softwareentwicklung</span>
+            <span style="font-size:0.65rem;color:rgba(7,0,31,0.4);flex:1.2;">Forschungszulage</span>
+            <div style="flex:1;"><span style="background:rgba(61,213,120,0.12);border:1px solid rgba(61,213,120,0.25);border-radius:5px;padding:0.15rem 0.45rem;font-size:0.58rem;color:#027a48;font-weight:700;">Bewilligt</span></div>
+            <span style="font-size:0.65rem;color:rgba(7,0,31,0.5);flex:1;text-align:right;">€ 480k</span>
+          </div>
+          <div style="padding:0.55rem 0.85rem;border-bottom:1px solid rgba(7,0,31,0.05);display:flex;gap:1rem;align-items:center;">
+            <span style="font-size:0.65rem;color:#07001f;font-weight:600;flex:3;">EU Horizon Projekt</span>
+            <span style="font-size:0.65rem;color:rgba(7,0,31,0.4);flex:1.2;">Horizon Europe</span>
+            <div style="flex:1;"><span style="background:rgba(110,69,255,0.1);border:1px solid rgba(110,69,255,0.2);border-radius:5px;padding:0.15rem 0.45rem;font-size:0.58rem;color:#6e45ff;font-weight:700;">In Prüfung</span></div>
+            <span style="font-size:0.65rem;color:rgba(7,0,31,0.5);flex:1;text-align:right;">€ 1,2 Mio.</span>
+          </div>
+          <div style="padding:0.55rem 0.85rem;display:flex;gap:1rem;align-items:center;">
+            <span style="font-size:0.65rem;color:#07001f;font-weight:600;flex:3;">Forschungszulage 2024</span>
+            <span style="font-size:0.65rem;color:rgba(7,0,31,0.4);flex:1.2;">Forschungszulage</span>
+            <div style="flex:1;"><span style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.22);border-radius:5px;padding:0.15rem 0.45rem;font-size:0.58rem;color:#b45309;font-weight:700;">Vorbereitung</span></div>
+            <span style="font-size:0.65rem;color:rgba(7,0,31,0.5);flex:1;text-align:right;">€ 320k</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STATS STRIP ═══════════════════════ -->
+<section style="padding:3rem 1.5rem;border-top:1px solid rgba(7,0,31,0.07);border-bottom:1px solid rgba(7,0,31,0.07);background:#f9f8ff;">
+  <div class="strip-grid" style="max-width:1060px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(7,0,31,0.08);border:1px solid rgba(7,0,31,0.08);border-radius:18px;overflow:hidden;">
+
+    <div style="background:#fff;padding:2rem 1.75rem;">
+      <div style="font-size:0.72rem;color:rgba(7,0,31,0.4);font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.65rem;">Gesichertes Volumen</div>
+      <div style="font-size:2.2rem;font-weight:800;color:#6e45ff;letter-spacing:-0.045em;line-height:1;">€ 2,5 Mio.</div>
+      <div style="margin-top:0.5rem;font-size:0.75rem;color:rgba(7,0,31,0.4);">kumuliert betreute Projekte</div>
+    </div>
+
+    <div style="background:#fff;padding:2rem 1.75rem;display:flex;align-items:center;gap:1.25rem;">
+      <svg viewBox="0 0 80 80" style="width:68px;height:68px;flex-shrink:0;">
+        <circle cx="40" cy="40" r="28" fill="none" stroke="rgba(7,0,31,0.07)" stroke-width="10"/>
+        <circle cx="40" cy="40" r="28" fill="none" stroke="#6e45ff" stroke-width="10"
+          stroke-dasharray="175.9" stroke-dashoffset="8.8"
+          stroke-linecap="round" transform="rotate(-90 40 40)"
+          style="filter:drop-shadow(0 0 5px rgba(110,69,255,0.35))"/>
+      </svg>
+      <div>
+        <div style="font-size:1.75rem;font-weight:800;color:#07001f;letter-spacing:-0.04em;line-height:1;">95 %</div>
+        <div style="font-size:0.72rem;color:rgba(7,0,31,0.4);margin-top:0.3rem;">Bewilligungsquote</div>
+      </div>
+    </div>
+
+    <div style="background:#fff;padding:2rem 1.75rem;">
+      <div style="font-size:0.72rem;color:rgba(7,0,31,0.4);font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.65rem;">Betreute Projekte</div>
+      <div style="font-size:2.2rem;font-weight:800;color:#07001f;letter-spacing:-0.045em;line-height:1;">100 <span style="color:#6e45ff;">+</span></div>
+      <div style="margin-top:0.5rem;font-size:0.75rem;color:rgba(7,0,31,0.4);">branchenübergreifend</div>
+    </div>
+
+    <div style="background:#fff;padding:0;overflow:hidden;position:relative;min-height:140px;">
+      <img src="https://placehold.co/300x200/ede9ff/6e45ff?text=Experte+für+Förderung" alt="Rübsam Berater" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,0,31,0.6) 0%,transparent 55%);"></div>
+      <div style="position:absolute;bottom:1.25rem;left:1.25rem;">
+        <div style="font-size:0.85rem;font-weight:700;color:#fff;">Ihr Fördermittel-Experte</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.7);margin-top:0.15rem;">15+ Jahre Erfahrung</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ LEISTUNGEN ═══════════════════════ -->
+<section id="leistungen" style="padding:7rem 1.5rem;background:#ffffff;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <p style="color:#6e45ff;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin-bottom:0.85rem;">Unsere Leistungen</p>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem);font-weight:800;letter-spacing:-0.035em;margin:0 0 1rem;line-height:1.1;color:#07001f;">Branchenübergreifende<br>Förderberatung</h2>
+      <p style="color:rgba(7,0,31,0.5);font-size:1.05rem;max-width:540px;margin:0 auto;line-height:1.75;">Rübsam fördert Innovationsvorhaben branchenübergreifend — vom flexiblen Start-up bis zum etablierten Konzern.</p>
+    </div>
+
+    <div id="forschungszulage" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.25rem;">
+
+      <div class="card-light" style="padding:1.85rem;">
+        <div style="width:42px;height:42px;background:rgba(110,69,255,0.1);border:1px solid rgba(110,69,255,0.18);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6e45ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+        </div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Forschungszulage</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.88rem;line-height:1.75;margin:0 0 1.25rem;">Staatliche Förderung für Forschung und Entwicklung — wir sichern Ihnen die steuerliche Zulage auf Ihre F&E-Aufwendungen. Bis zu 25 % Ihrer Kosten werden erstattet.</p>
+        <a href="#prozess" style="color:#6e45ff;font-size:0.85rem;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:0.35rem;transition:opacity 0.15s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Mehr erfahren <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div id="foerderung" class="card-light" style="padding:1.85rem;">
+        <div style="width:42px;height:42px;background:rgba(61,200,130,0.1);border:1px solid rgba(61,200,130,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">EU-Förderung</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.88rem;line-height:1.75;margin:0 0 1.25rem;">Wir identifizieren und beantragen passende EU-Förderprogramme für Ihr Unternehmen — von Horizon Europe bis zu strukturellen Fördermitteln. Internationaler Rahmen, maximale Wirkung.</p>
+        <a href="#kontakt" style="color:#059669;font-size:0.85rem;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:0.35rem;transition:opacity 0.15s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Mehr erfahren <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="card-light" style="padding:1.85rem;">
+        <div style="width:42px;height:42px;background:rgba(110,69,255,0.1);border:1px solid rgba(110,69,255,0.18);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6e45ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Regionale Förderung</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.88rem;line-height:1.75;margin:0 0 1.25rem;">Wir kennen die regionalen und nationalen Förderlandschaften genau. Von Bundesländerprogrammen bis zu kommunalen Zuschüssen — wir finden die optimale Förderung für Ihren Standort.</p>
+        <a href="#kontakt" style="color:#6e45ff;font-size:0.85rem;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:0.35rem;transition:opacity 0.15s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Mehr erfahren <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STATS ═══════════════════════ -->
+<section style="padding:6rem 1.5rem;background:#f9f8ff;border-top:1px solid rgba(7,0,31,0.07);border-bottom:1px solid rgba(7,0,31,0.07);">
+  <div class="stats-grid" style="max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+    <div>
+      <p style="color:#6e45ff;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin-bottom:0.85rem;">Unsere Bilanz</p>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-0.035em;margin:0 0 1rem;line-height:1.18;color:#07001f;">Langjährige Erfahrung —<br>messbare Ergebnisse</h2>
+      <p style="color:rgba(7,0,31,0.5);line-height:1.75;margin:0 0 2.5rem;font-size:0.95rem;">Profitieren Sie von unserer langjährigen Erfahrung. Wir sind Ihr Spezialist für die Akquise von Fördermitteln — mit nachweisbarem Erfolg.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;">
+        <div>
+          <div style="font-size:2.1rem;font-weight:800;color:#6e45ff;letter-spacing:-0.035em;line-height:1;">€ 2,5 Mio.</div>
+          <div style="color:rgba(7,0,31,0.45);font-size:0.8rem;margin-top:0.3rem;line-height:1.4;">gesicherte Fördermittel</div>
+        </div>
+        <div>
+          <div style="font-size:2.1rem;font-weight:800;color:#6e45ff;letter-spacing:-0.035em;line-height:1;">100+</div>
+          <div style="color:rgba(7,0,31,0.45);font-size:0.8rem;margin-top:0.3rem;line-height:1.4;">erfolgreich betreute Projekte</div>
+        </div>
+        <div>
+          <div style="font-size:2.1rem;font-weight:800;color:#07001f;letter-spacing:-0.035em;line-height:1;">95 %</div>
+          <div style="color:rgba(7,0,31,0.45);font-size:0.8rem;margin-top:0.3rem;line-height:1.4;">Bewilligungsquote</div>
+        </div>
+        <div>
+          <div style="font-size:2.1rem;font-weight:800;color:#07001f;letter-spacing:-0.035em;line-height:1;">15+</div>
+          <div style="color:rgba(7,0,31,0.45);font-size:0.8rem;margin-top:0.3rem;line-height:1.4;">Jahre Branchenerfahrung</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:center;">
+      <div style="position:relative;width:260px;height:260px;">
+        <svg viewBox="0 0 260 260" style="width:100%;height:100%;transform:rotate(-90deg);">
+          <circle cx="130" cy="130" r="95" fill="none" stroke="rgba(7,0,31,0.07)" stroke-width="26"/>
+          <circle cx="130" cy="130" r="95" fill="none" stroke="#6e45ff" stroke-width="26"
+            stroke-dasharray="597" stroke-dashoffset="149" stroke-linecap="round"
+            style="filter:drop-shadow(0 0 6px rgba(110,69,255,0.3))"/>
+          <circle cx="130" cy="130" r="95" fill="none" stroke="#3dfd98" stroke-width="26"
+            stroke-dasharray="597" stroke-dashoffset="448" stroke-linecap="round"/>
+        </svg>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <div style="font-size:2.4rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:#07001f;">95 %</div>
+          <div style="color:rgba(7,0,31,0.45);font-size:0.78rem;margin-top:0.2rem;">Erfolgsquote</div>
+        </div>
+        <div style="position:absolute;bottom:-2.5rem;left:50%;transform:translateX(-50%);display:flex;gap:1.25rem;white-space:nowrap;">
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:rgba(7,0,31,0.45);">
+            <div style="width:10px;height:10px;border-radius:50%;background:#6e45ff;"></div>F&E / Forschung
+          </div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:rgba(7,0,31,0.45);">
+            <div style="width:10px;height:10px;border-radius:50%;background:#3dfd98;"></div>EU & Regional
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ VORTEILE ═══════════════════════ -->
+<section style="padding:7rem 1.5rem;background:#ffffff;">
+  <div style="max-width:1060px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <p style="color:#6e45ff;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin-bottom:0.85rem;">Warum Rübsam</p>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem);font-weight:800;letter-spacing:-0.035em;margin:0 0 1rem;line-height:1.1;color:#07001f;">Ihre Vorteile einer<br>Zusammenarbeit</h2>
+      <p style="color:rgba(7,0,31,0.5);font-size:1.05rem;max-width:480px;margin:0 auto;line-height:1.75;">Wir begleiten Sie durch den gesamten Förderprozess — von der ersten Prüfung bis zur Auszahlung.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem;">
+
+      <div class="card-light" style="padding:1.85rem;text-align:center;">
+        <div style="width:52px;height:52px;background:rgba(110,69,255,0.09);border:1px solid rgba(110,69,255,0.16);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6e45ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Kompetente Beratung</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.875rem;line-height:1.75;margin:0;">Individuelle Analyse Ihres Unternehmens und maßgeschneiderte Empfehlungen für die bestmögliche Förderung.</p>
+      </div>
+
+      <div class="card-light" style="padding:1.85rem;text-align:center;">
+        <div style="width:52px;height:52px;background:rgba(5,150,105,0.08);border:1px solid rgba(5,150,105,0.16);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Effektive Betreuung</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.875rem;line-height:1.75;margin:0;">Wir übernehmen die vollständige Antragsstellung und begleiten Sie persönlich durch jeden Schritt des Prozesses.</p>
+      </div>
+
+      <div class="card-light" style="padding:1.85rem;text-align:center;">
+        <div style="width:52px;height:52px;background:rgba(110,69,255,0.09);border:1px solid rgba(110,69,255,0.16);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6e45ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Risikominimierung</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.875rem;line-height:1.75;margin:0;">Unsere Experten kennen die Fallstricke — wir minimieren das Risiko einer Ablehnung durch präzise Antragsunterlagen.</p>
+      </div>
+
+      <div class="card-light" style="padding:1.85rem;text-align:center;">
+        <div style="width:52px;height:52px;background:rgba(5,150,105,0.08);border:1px solid rgba(5,150,105,0.16);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Erfolgsorientiert</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.875rem;line-height:1.75;margin:0;">Unser Vergütungsmodell orientiert sich am Erfolg — wir sind nur dann zufrieden, wenn Sie Ihre Förderung erhalten.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 5 SCHRITTE ═══════════════════════ -->
+<section id="prozess" style="padding:7rem 1.5rem;background:#f9f8ff;border-top:1px solid rgba(7,0,31,0.07);">
+  <div style="max-width:1060px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <p style="color:#6e45ff;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin-bottom:0.85rem;">Der Ablauf</p>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem);font-weight:800;letter-spacing:-0.035em;margin:0 0 1rem;line-height:1.1;color:#07001f;">In 5 Schritten zur<br>Forschungszulage</h2>
+      <p style="color:rgba(7,0,31,0.5);font-size:1.05rem;max-width:460px;margin:0 auto;line-height:1.75;">Klar strukturiert, transparent und effizient — wir übernehmen den Großteil der Arbeit für Sie.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;">
+
+      <div style="text-align:center;">
+        <div style="width:54px;height:54px;background:rgba(110,69,255,0.09);border:1px solid rgba(110,69,255,0.2);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.35rem;font-weight:800;color:#6e45ff;letter-spacing:-0.03em;">1</div>
+        <h3 style="font-size:0.95rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Erstberatung</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.85rem;line-height:1.7;margin:0;">Kostenlose Prüfung Ihrer Förderfähigkeit und individuelle Beratung zu den besten Optionen.</p>
+      </div>
+
+      <div style="text-align:center;">
+        <div style="width:54px;height:54px;background:rgba(110,69,255,0.09);border:1px solid rgba(110,69,255,0.2);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.35rem;font-weight:800;color:#6e45ff;letter-spacing:-0.03em;">2</div>
+        <h3 style="font-size:0.95rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Dokumentation</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.85rem;line-height:1.7;margin:0;">Wir erarbeiten gemeinsam alle nötigen Unterlagen und beschreiben Ihre F&E-Tätigkeiten förderfähig.</p>
+      </div>
+
+      <div style="text-align:center;">
+        <div style="width:54px;height:54px;background:rgba(110,69,255,0.09);border:1px solid rgba(110,69,255,0.2);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.35rem;font-weight:800;color:#6e45ff;letter-spacing:-0.03em;">3</div>
+        <h3 style="font-size:0.95rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Antragsstellung</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.85rem;line-height:1.7;margin:0;">Einreichung des Antrags beim BSFZ — wir kümmern uns um die vollständige Abwicklung.</p>
+      </div>
+
+      <div style="text-align:center;">
+        <div style="width:54px;height:54px;background:rgba(110,69,255,0.09);border:1px solid rgba(110,69,255,0.2);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.35rem;font-weight:800;color:#6e45ff;letter-spacing:-0.03em;">4</div>
+        <h3 style="font-size:0.95rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Bescheinigung</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.85rem;line-height:1.7;margin:0;">Nach Bewilligung erhalten Sie die Förderbescheinigung — wir begleiten Rückfragen des BSFZ.</p>
+      </div>
+
+      <div style="text-align:center;">
+        <div style="width:54px;height:54px;background:rgba(110,69,255,0.09);border:1px solid rgba(110,69,255,0.2);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.35rem;font-weight:800;color:#059669;letter-spacing:-0.03em;">5</div>
+        <h3 style="font-size:0.95rem;font-weight:700;margin:0 0 0.5rem;letter-spacing:-0.02em;color:#07001f;">Auszahlung</h3>
+        <p style="color:rgba(7,0,31,0.5);font-size:0.85rem;line-height:1.7;margin:0;">Die Zulage wird direkt mit Ihrer Steuerschuld verrechnet oder als Auszahlung gutgeschrieben.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TESTIMONIAL ═══════════════════════ -->
+<section style="padding:7rem 1.5rem;border-top:1px solid rgba(7,0,31,0.07);background:#ffffff;">
+  <div class="testimonial-grid" style="max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+    <div>
+      <p style="color:#6e45ff;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin-bottom:1.5rem;">Kundenstimmen</p>
+      <div style="display:flex;gap:2px;margin-bottom:1.25rem;">
+        <span style="color:#f59e0b;font-size:1.1rem;">★★★★★</span>
+      </div>
+      <blockquote style="font-size:1.35rem;font-weight:700;line-height:1.42;letter-spacing:-0.025em;margin:0 0 2rem;color:#07001f;">
+        "Dank Rübsam Consulting haben wir innerhalb von 4 Monaten über €480.000 Forschungszulage gesichert — ohne eigenen Aufwand."
+      </blockquote>
+      <div style="display:flex;align-items:center;gap:0.85rem;">
+        <img src="https://placehold.co/44x44/ede9ff/6e45ff" alt="Geschäftsführer" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(110,69,255,0.2);">
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;color:#07001f;">Markus W.</div>
+          <div style="color:rgba(7,0,31,0.45);font-size:0.82rem;margin-top:0.1rem;">Geschäftsführer, TechInnovation GmbH</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:relative;">
+      <div style="border-radius:18px;overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(7,0,31,0.12),0 4px 16px rgba(7,0,31,0.06),0 0 0 1px rgba(7,0,31,0.06);">
+        <img src="https://placehold.co/460x520/f5f3ff/6e45ff" alt="Beratungsgespräch" style="width:100%;height:auto;display:block;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,0,31,0.35) 0%,transparent 55%);"></div>
+        <div style="position:absolute;inset:0;background:rgba(110,69,255,0.06);mix-blend-mode:multiply;"></div>
+      </div>
+      <div style="position:absolute;top:-14px;right:-14px;width:75%;height:75%;border-radius:18px;background:rgba(110,69,255,0.06);border:1px solid rgba(110,69,255,0.1);z-index:-1;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FAQ ═══════════════════════ -->
+<section id="faq" style="padding:7rem 1.5rem;background:#f9f8ff;border-top:1px solid rgba(7,0,31,0.07);">
+  <div style="max-width:680px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <p style="color:#6e45ff;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin-bottom:0.85rem;">FAQ</p>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem);font-weight:800;letter-spacing:-0.035em;margin:0;line-height:1.1;color:#07001f;">Häufig gestellte Fragen</h2>
+    </div>
+
+    <div>
+      <div class="faq-item" style="padding:1.25rem 0;">
+        <button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;color:#07001f;text-align:left;font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0;letter-spacing:-0.015em;">
+          Was ist die Forschungszulage?
+          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.2s ease;color:rgba(7,0,31,0.3);"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" style="padding:0.75rem 0 0.25rem;color:rgba(7,0,31,0.55);font-size:0.9rem;line-height:1.75;">
+          Die Forschungszulage ist eine staatliche Fördermaßnahme in Deutschland, die Unternehmen für ihre Aufwendungen in Forschung und Entwicklung belohnt. Unternehmen erhalten bis zu 25 % ihrer förderfähigen F&E-Kosten als steuerliche Gutschrift zurück — unabhängig von Branche oder Unternehmensgröße.
+        </div>
+      </div>
+
+      <div class="faq-item" style="padding:1.25rem 0;">
+        <button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;color:#07001f;text-align:left;font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0;letter-spacing:-0.015em;">
+          Wer kann die Forschungszulage beantragen?
+          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.2s ease;color:rgba(7,0,31,0.3);"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" style="padding:0.75rem 0 0.25rem;color:rgba(7,0,31,0.55);font-size:0.9rem;line-height:1.75;">
+          Grundsätzlich alle in Deutschland steuerpflichtigen Unternehmen, die eigene Forschungs- und Entwicklungsvorhaben durchführen — unabhängig von Größe, Branche oder ob das Unternehmen Gewinne erzielt. Auch Start-ups und Solopreneur profitieren.
+        </div>
+      </div>
+
+      <div class="faq-item" style="padding:1.25rem 0;">
+        <button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;color:#07001f;text-align:left;font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0;letter-spacing:-0.015em;">
+          Wie hoch ist die Förderung?
+          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.2s ease;color:rgba(7,0,31,0.3);"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" style="padding:0.75rem 0 0.25rem;color:rgba(7,0,31,0.55);font-size:0.9rem;line-height:1.75;">
+          Die Forschungszulage beträgt 25 % der förderfähigen F&E-Aufwendungen. Bemessungsgrundlage sind bis zu 10 Mio. € pro Jahr — das ergibt eine maximale Förderung von 2,5 Mio. € jährlich. KMU können unter bestimmten Bedingungen erhöhte Sätze erhalten.
+        </div>
+      </div>
+
+      <div class="faq-item" style="padding:1.25rem 0;">
+        <button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;color:#07001f;text-align:left;font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0;letter-spacing:-0.015em;">
+          Wie lange dauert der Prozess?
+          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.2s ease;color:rgba(7,0,31,0.3);"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" style="padding:0.75rem 0 0.25rem;color:rgba(7,0,31,0.55);font-size:0.9rem;line-height:1.75;">
+          Von der Erstberatung bis zum Bewilligungsbescheid dauert es typischerweise 3–6 Monate. Die eigentliche Auszahlung erfolgt im Rahmen der Steuererklärung. Wir begleiten Sie dabei lückenlos und halten Sie in jedem Schritt auf dem Laufenden.
+        </div>
+      </div>
+
+      <div class="faq-item" style="padding:1.25rem 0;border-bottom:1px solid rgba(7,0,31,0.08);">
+        <button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;color:#07001f;text-align:left;font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0;letter-spacing:-0.015em;">
+          Entstehen für mich Kosten, wenn der Antrag abgelehnt wird?
+          <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.2s ease;color:rgba(7,0,31,0.3);"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" style="padding:0.75rem 0 0.25rem;color:rgba(7,0,31,0.55);font-size:0.9rem;line-height:1.75;">
+          Unser Modell ist erfolgsorientiert — bei einer Ablehnung entstehen Ihnen keine Kosten. Wir verdienen nur dann, wenn Sie Ihre Förderung erhalten. Das ist unser Commitment an Ihren Erfolg.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CTA ═══════════════════════ -->
+<section id="kontakt" style="padding:5rem 1.5rem 6rem;background:#ffffff;">
+  <div style="max-width:880px;margin:0 auto;">
+    <div style="background:linear-gradient(135deg,#6e45ff 0%,#9b7bff 100%);border-radius:24px;padding:5rem 3rem;text-align:center;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(110,69,255,0.3),0 4px 16px rgba(110,69,255,0.2);">
+      <div style="position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,0.08);pointer-events:none;"></div>
+      <div style="position:absolute;bottom:-60px;left:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.06);pointer-events:none;"></div>
+      <div style="position:relative;z-index:1;">
+        <h2 style="font-size:clamp(1.9rem,4.5vw,3.1rem);font-weight:800;letter-spacing:-0.035em;margin:0 0 1rem;line-height:1.1;color:#fff;">Brauchen Sie mehr Details?<br>Kontaktieren Sie uns.</h2>
+        <p style="color:rgba(255,255,255,0.75);font-size:1.05rem;line-height:1.75;margin:0 0 2.25rem;max-width:480px;margin-left:auto;margin-right:auto;">Wir prüfen kostenlos und unverbindlich Ihre Förderfähigkeit — und zeigen Ihnen konkret, welche Mittel Sie sichern können.</p>
+        <div style="display:flex;align-items:center;justify-content:center;gap:0.85rem;flex-wrap:wrap;">
+          <a href="mailto:info@ruebsam-consulting.de" style="background:#fff;color:#6e45ff;padding:0.85rem 2.25rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform 0.15s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.15s ease;box-shadow:0 4px 14px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Jetzt Förderung prüfen</a>
+          <a href="tel:+49" style="background:rgba(255,255,255,0.15);color:#fff;padding:0.85rem 2.25rem;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid rgba(255,255,255,0.3);transition:transform 0.15s cubic-bezier(0.34,1.56,0.64,1),background 0.15s ease;" onmouseover="this.style.background='rgba(255,255,255,0.22)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.15)';this.style.transform='translateY(0)'">Rückruf anfragen →</a>
+        </div>
+        <p style="color:rgba(255,255,255,0.5);font-size:0.78rem;margin:1.25rem 0 0;">Kostenlos und unverbindlich. Erfolgsorientierte Vergütung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer style="border-top:1px solid rgba(7,0,31,0.08);padding:3.5rem 1.5rem 2rem;background:#07001f;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3.5rem;">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+          <div style="width:28px;height:28px;background:linear-gradient(135deg,#6e45ff,#9b7bff);border-radius:7px;display:flex;align-items:center;justify-content:center;">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 3h5a4 4 0 0 1 0 8H4V3z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <span style="font-weight:800;font-size:1rem;letter-spacing:-0.03em;color:#fff;">Rübsam Consulting</span>
+        </div>
+        <p style="color:rgba(255,255,255,0.35);font-size:0.84rem;line-height:1.75;margin:0 0 1.25rem;max-width:250px;">Ihr Spezialist für staatliche Fördermittel — Forschungszulage, EU-Förderung und regionale Zuschüsse.</p>
+        <div style="display:flex;gap:0.6rem;">
+          <a href="#" style="width:32px;height:32px;border:1px solid rgba(255,255,255,0.12);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.72rem;font-weight:700;transition:border-color 0.15s ease;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)'">in</a>
+          <a href="#" style="width:32px;height:32px;border:1px solid rgba(255,255,255,0.12);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.72rem;font-weight:700;transition:border-color 0.15s ease;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)'">X</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.74rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.28);margin:0 0 1rem;">Leistungen</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.55rem;">
+          <li><a href="#forschungszulage" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Forschungszulage</a></li>
+          <li><a href="#foerderung" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">EU-Förderung</a></li>
+          <li><a href="#leistungen" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Regionale Förderung</a></li>
+          <li><a href="#prozess" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Ablauf & Prozess</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:0.74rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.28);margin:0 0 1rem;">Unternehmen</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.55rem;">
+          <li><a href="#" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Über uns</a></li>
+          <li><a href="#" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Neuigkeiten</a></li>
+          <li><a href="#kontakt" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Kontakt</a></li>
+          <li><a href="#faq" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:0.74rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.28);margin:0 0 1rem;">Rechtliches</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.55rem;">
+          <li><a href="#" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Impressum</a></li>
+          <li><a href="#" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Datenschutz</a></li>
+          <li><a href="#" style="color:rgba(255,255,255,0.5);font-size:0.875rem;text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
+      <p style="color:rgba(255,255,255,0.25);font-size:0.78rem;margin:0;">© 2024 Rübsam Consulting. Alle Rechte vorbehalten.</p>
+      <p style="color:rgba(255,255,255,0.25);font-size:0.78rem;margin:0;">Spezialist für Fördermittelakquise ✦</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+    el.querySelector('.faq-icon').style.color = 'rgba(7,0,31,0.3)';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.querySelector('.faq-icon').style.transform = 'rotate(180deg)';
+    btn.querySelector('.faq-icon').style.color = '#6e45ff';
+  }
+}
+</script>
+</body>
+</html>
